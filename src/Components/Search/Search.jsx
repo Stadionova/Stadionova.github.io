@@ -1,4 +1,5 @@
 import classes from "./Search.module.css";
+import Snippets from "../Snippets/Snippets";
 import React from "react";
 
 const Search = () => {
@@ -8,6 +9,7 @@ const Search = () => {
                 <input type="text" />
                 <button>SEARCH</button>
             </div>
+            <Snippets />
         </div>
     )
 }
