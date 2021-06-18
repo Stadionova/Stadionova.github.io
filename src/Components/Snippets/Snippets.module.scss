@@ -1,0 +1,22 @@
+.snippetsWrapper {
+    width: 70%;
+    height: 600px;
+    margin: 0 auto;
+    .eachSnippet {
+        display: flex;
+        margin: 0 auto;
+        background-color: cornsilk;
+        border: 1px solid black;
+        margin-top: 20px;
+        cursor: pointer;
+        img {
+            height: 120px;
+            width: 20%;
+            padding-right: 20px;
+        }
+        h1 {
+            font-size: 15pt;
+            padding-right: 20px;
+        }
+    }
+}

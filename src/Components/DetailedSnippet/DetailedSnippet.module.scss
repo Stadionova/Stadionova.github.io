@@ -1,0 +1,33 @@
+.modalWindow {
+    position: fixed;
+    height: 100%;
+    background-color: darkgray;
+    display: flex;
+    width: 100%;
+    .detailedSnippetWrapper {
+        display: flex;
+        margin: 0 auto;
+        background-color: cornsilk;
+        border: 1px solid black;
+        margin-top: 10%;
+        height: 70%;
+        width: 80%;
+    }
+    img {
+        height: 200px;
+        width: 25%;
+        padding-right: 20px;
+    }
+    h1 {
+        font-size: 15pt;
+        padding-right: 20px;
+    }
+    p {
+        padding-right: 20px;
+    }
+    button {
+        margin-right: 15px;
+        position: absolute;
+        right: 0;
+    }
+}

@@ -1,4 +1,4 @@
-import classes from "./Search.module.css";
+import classes from "./Search.module.scss";
 import Snippets from "../Snippets/Snippets";
 import React from "react";
 
