@@ -2,9 +2,9 @@ import classes from "./Snippets.module.scss";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Snippets = () => {
+const Snippets = (props) => {
     return (
-        <div className={classes.snippetsWrapper}>
+        <div className={classes.snippetsWrapper} ref={props.buttonRef} >
             <NavLink
                 to={{
                     pathname: '/details/' + 1
