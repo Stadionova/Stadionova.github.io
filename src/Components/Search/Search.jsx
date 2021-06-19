@@ -1,6 +1,7 @@
 import classes from "./Search.module.scss";
 import Snippets from "../Snippets/Snippets";
 import React from "react";
+import axios from "axios";
 
 const Search = () => {
     const allSnipets = React.createRef();
@@ -9,6 +10,7 @@ const Search = () => {
 
     function showAllSnipets() {
         allSnipets.current.style.display = 'block';
+        getServerData();
     }
 
     function catchInputChanges() {
@@ -21,6 +23,12 @@ const Search = () => {
                 clearTimeout(timerId);
             }, 1000);
         }
+    }
+
+    function getServerData() {
+        axios.get("http://openlibrary.org/search.json?q=the+lord+of+the+rings").then(response => {
+            console.log('response ', response);
+        });
     }
 
     return (
