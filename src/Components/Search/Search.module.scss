@@ -5,6 +5,9 @@
     border: 2px solid black;
     margin: 0 auto;
     margin-top: 110px;
+    overflow: scroll;
+    overflow-x: unset;
+    padding-bottom: 20px;
     .searchBlock {
         display: flex;
         width: 95%;

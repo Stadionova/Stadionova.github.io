@@ -8,12 +8,19 @@ const Snippets = ({ data, buttonRef }) => {
     return (
         <div className={classes.snippetsWrapper} ref={buttonRef} >
             {data.map(book => {
+                // console.log('book ', book);
                 const dataKey = book.key.split('/');
                 const id = dataKey[dataKey.length - 1];
                 return (
                     <NavLink
                         to={{
-                            pathname: book.key
+                            pathname: book.key,
+                            title: book.title,
+                            author: book['author_name'] ? book['author_name'][0] : '',
+                            publishDate: book['publish_date'] ? book['publish_date'][0] : '',
+                            publisher: book.publisher ? book.publisher[0] : '',
+                            isbn: book.isbn ? book.isbn[0] : '',
+                            cover: hardcodedBookCover
                         }}>
                         <div className={classes.eachSnippet} key={id}>
                             <img src={hardcodedBookCover} alt="обложка книги" />

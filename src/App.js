@@ -7,7 +7,7 @@ import React from "react";
 function App() {
   return (
     <div className="App">
-      <Route path='/details/' component={DetailedSnippet} />
+      <Route path='/works/' component={DetailedSnippet} />
       <Route path='/' component={Search} />
     </div>
   );
