@@ -7,8 +7,7 @@ const hardcodedBookCover = "https://upload.wikimedia.org/wikipedia/ru/1/10/%D0%9
 const Snippets = ({ data, buttonRef }) => {
     return (
         <div className={classes.snippetsWrapper} ref={buttonRef} >
-            {data.map(book => {
-                // console.log('book ', book);
+            {data && data.map(book => {
                 const dataKey = book.key.split('/');
                 const id = dataKey[dataKey.length - 1];
                 return (
