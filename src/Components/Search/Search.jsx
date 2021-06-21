@@ -5,37 +5,38 @@ import axios from "axios";
 
 const Search = () => {
     const allSnipets = React.createRef();
+    const inputValue = React.createRef();
+
     let isTimerStarted = false;
     let timerId;
-
-    function showAllSnipets() {
-        allSnipets.current.style.display = 'block';
-        getServerData();
-    }
+    let currentInputValue;
 
     function catchInputChanges() {
+        currentInputValue = inputValue.current.value.replace(/ /g, "+").toLowerCase();
         isTimerStarted = true;
         if (isTimerStarted) {
             clearTimeout(timerId);
             timerId = setTimeout(() => {
-                showAllSnipets();
+                getServerData(currentInputValue);
                 isTimerStarted = false;
                 clearTimeout(timerId);
             }, 1000);
         }
     }
 
-    function getServerData() {
-        axios.get("http://openlibrary.org/search.json?q=the+lord+of+the+rings").then(response => {
-            console.log('response ', response);
+    function getServerData(currentInputValue) {
+        axios.get(`https://openlibrary.org/search.json?q=${currentInputValue}`).then(response => {
+            if (response.status === 200 && allSnipets.current) {
+                allSnipets.current.style.display = 'block';
+            }
         });
     }
 
     return (
         <div className={classes.searchInput}>
             <div className={classes.searchBlock}>
-                <input type="text" onChange={catchInputChanges} />
-                <button onClick={showAllSnipets}>SEARCH</button>
+                <input type="text" onChange={catchInputChanges} ref={inputValue} />
+                <button onClick={getServerData}>SEARCH</button>
             </div>
             <Snippets buttonRef={allSnipets} />
         </div>
