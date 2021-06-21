@@ -35,7 +35,7 @@ const Search = () => {
     return (
         <div className={classes.searchInput}>
             <div className={classes.searchBlock}>
-                <input type="text" onChange={catchInputChanges} ref={inputValue} />
+                <input type="text" onChange={catchInputChanges} ref={inputValue} placeholder='type title of the book here' />
                 <button onClick={getServerData}>SEARCH</button>
             </div>
             <Snippets buttonRef={allSnipets} />
