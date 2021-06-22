@@ -15,12 +15,16 @@ const Search = () => {
     let timerId;
 
     function getServerData(currentInputValue) {
-        axios.get(`https://openlibrary.org/search.json?q=${currentInputValue}`).then(response => {
-            if (response.status === 200 && allSnipets.current) {
-                allSnipets.current.style.display = 'block';
-                setServerData(response.data.docs);
-            }
-        });
+        if (typeof (currentInputValue) != 'object') {
+            axios.get(`https://openlibrary.org/search.json?q=${currentInputValue}`).then(response => {
+                if (response.status === 200 && allSnipets.current) {
+                    setServerData(response.data.docs);
+                }
+            });
+        } else {
+            setServerData(serverData);
+            allSnipets.current.style.display = 'block';
+        }
     }
 
     function catchInputChanges() {
@@ -39,8 +43,12 @@ const Search = () => {
     return (
         <div className={classes.searchInput}>
             <div className={classes.searchBlock}>
-                <input type="text" onChange={catchInputChanges}
-                    ref={inputValue} placeholder='type title of the book here' />
+                <input
+                    type="text"
+                    onChange={catchInputChanges}
+                    ref={inputValue}
+                    placeholder='type title of the book here'
+                />
                 <button onClick={getServerData}>SEARCH</button>
             </div>
             <Snippets buttonRef={allSnipets} data={serverData} />
