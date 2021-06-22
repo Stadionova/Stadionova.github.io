@@ -8,11 +8,11 @@ const DetailedSnippet = (props) => {
         <div className={classes.modalWindow}>
             <div className={classes.detailedSnippetWrapper}>
                 <img src={bookDetailedData.cover} alt="" />
-                <h1>{bookDetailedData.title}</h1>
-                <p>{bookDetailedData.author}</p>
-                <p>{bookDetailedData.publishDate}</p>
-                <p>{bookDetailedData.publisher}</p>
-                <p>{bookDetailedData.isbn}</p>
+                <h1>НАЗВАНИЕ {bookDetailedData.title}</h1>
+                <p>АВТОР {bookDetailedData.author}</p>
+                <p>ДАТА ПУБЛИКАЦИИ {bookDetailedData.publishDate}</p>
+                <p>ИЗДАТЕЛЬ {bookDetailedData.publisher}</p>
+                <p>ISBN {bookDetailedData.isbn}</p>
             </div>
             <NavLink
                 to={{
