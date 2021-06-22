@@ -10,6 +10,7 @@ const Snippets = ({ data, buttonRef }) => {
             {data && data.map(book => {
                 const dataKey = book.key.split('/');
                 const id = dataKey[dataKey.length - 1];
+                const isbn = book.isbn ? book.isbn[0] : '';
                 return (
                     <NavLink
                         to={{
@@ -22,7 +23,7 @@ const Snippets = ({ data, buttonRef }) => {
                             cover: hardcodedBookCover
                         }}>
                         <div className={classes.eachSnippet} key={id}>
-                            <img src={hardcodedBookCover} alt="обложка книги" />
+                            <img src={`http://covers.openlibrary.org/b/isbn/${isbn}-S.jpg`} alt="обложка книги" />
                             <h1>{book.title}</h1>
                             <p>{book['author_name'] ? book['author_name'][0] : ''}</p>
                         </div>
