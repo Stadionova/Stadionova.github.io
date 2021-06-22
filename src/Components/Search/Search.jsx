@@ -14,17 +14,16 @@ const Search = () => {
     let isTimerStarted = false;
     let timerId;
 
+    function showAllBooks() {
+        allSnipets.current.style.display = 'block';
+    }
+
     function getServerData(currentInputValue) {
-        if (typeof (currentInputValue) != 'object') {
-            axios.get(`https://openlibrary.org/search.json?q=${currentInputValue}`).then(response => {
-                if (response.status === 200 && allSnipets.current) {
-                    setServerData(response.data.docs);
-                }
-            });
-        } else {
-            setServerData(serverData);
-            allSnipets.current.style.display = 'block';
-        }
+        axios.get(`https://openlibrary.org/search.json?q=${currentInputValue}`).then(response => {
+            if (response.status === 200) {
+                setServerData(response.data.docs);
+            }
+        });
     }
 
     function catchInputChanges() {
@@ -49,7 +48,7 @@ const Search = () => {
                     ref={inputValue}
                     placeholder='type title of the book here'
                 />
-                <button onClick={getServerData}>SEARCH</button>
+                <button onClick={showAllBooks}>SEARCH</button>
             </div>
             <Snippets buttonRef={allSnipets} data={serverData} />
         </div>
