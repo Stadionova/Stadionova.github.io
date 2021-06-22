@@ -11,12 +11,19 @@
         cursor: pointer;
         img {
             height: 120px;
-            width: 20%;
+            width: 120px;
             padding-right: 20px;
         }
         h1 {
             font-size: 15pt;
             padding-right: 20px;
+            color: black;
         }
+        p {
+            color: black;
+        }
+    }
+    a {
+        text-decoration: none;
     }
 }
