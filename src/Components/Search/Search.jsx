@@ -5,37 +5,45 @@ import axios from "axios";
 
 const Search = () => {
     let currentInputValue;
-
-    const [serverData, setServerData] = useState(currentInputValue);
-
-    const allSnipets = React.createRef();
-    const inputValue = React.createRef();
-
     let isTimerStarted = false;
     let timerId;
+
+    const [serverData, setServerData] = useState(currentInputValue);
+    const allSnipets = React.createRef();
+    const inputValue = React.createRef();
 
     function showAllBooks() {
         allSnipets.current.style.display = 'block';
     }
 
+    let start;
+
     function getServerData(currentInputValue) {
         axios.get(`https://openlibrary.org/search.json?q=${currentInputValue}`).then(response => {
             if (response.status === 200) {
+                const end = new Date().getTime();
+                console.log(`request takes: ${end - start}ms`);
                 setServerData(response.data.docs);
             }
         });
     }
 
+    function setTimerId() {
+        isTimerStarted = true;
+        timerId = setTimeout(() => {
+            start = new Date().getTime();
+            getServerData(currentInputValue);
+            isTimerStarted = false;
+        }, 1000);
+    }
+
     function catchInputChanges() {
         currentInputValue = inputValue.current.value.replace(/ /g, "+").toLowerCase();
-        isTimerStarted = true;
-        if (isTimerStarted) {
+        if (!isTimerStarted) {
+            setTimerId();
+        } else {
             clearTimeout(timerId);
-            timerId = setTimeout(() => {
-                getServerData(currentInputValue);
-                isTimerStarted = false;
-                clearTimeout(timerId);
-            }, 1000);
+            setTimerId();
         }
     }
 
