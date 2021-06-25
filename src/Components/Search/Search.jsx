@@ -1,12 +1,13 @@
 import classes from "./Search.module.scss";
+import makeApiRequest from "../../makeApiRequest";
 import Snippets from "../Snippets/Snippets";
 import React, { useState } from 'react';
-import axios from "axios";
 
 const Search = () => {
     let currentInputValue;
     let isTimerStarted = false;
     let timerId;
+    let start;
 
     const [serverData, setServerData] = useState(currentInputValue);
     const allSnipets = React.createRef();
@@ -16,23 +17,11 @@ const Search = () => {
         allSnipets.current.style.display = 'block';
     }
 
-    let start;
-
-    function getServerData(currentInputValue) {
-        axios.get(`https://openlibrary.org/search.json?q=${currentInputValue}`).then(response => {
-            if (response.status === 200) {
-                const end = new Date().getTime();
-                console.log(`request takes: ${end - start}ms`);
-                setServerData(response.data.docs);
-            }
-        });
-    }
-
     function setTimerId() {
         isTimerStarted = true;
         timerId = setTimeout(() => {
             start = new Date().getTime();
-            getServerData(currentInputValue);
+            makeApiRequest(currentInputValue, start, setServerData);
             isTimerStarted = false;
         }, 1000);
     }
