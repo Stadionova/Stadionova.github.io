@@ -3,25 +3,24 @@ import makeApiRequest from "../../makeApiRequest";
 import Snippets from "../Snippets/Snippets";
 import React, { useState } from 'react';
 
-const Search = () => {
+const Search = ({ showLoadingAnimation, stopLoadingAnimation, value }) => {
     let currentInputValue;
     let isTimerStarted = false;
     let timerId;
-    let start;
 
     const [serverData, setServerData] = useState(currentInputValue);
-    const allSnipets = React.createRef();
     const inputValue = React.createRef();
+    const allSnipets = React.createRef();
 
     function showAllBooks() {
         allSnipets.current.style.display = 'block';
+        showLoadingAnimation();
     }
 
     function setTimerId() {
         isTimerStarted = true;
         timerId = setTimeout(() => {
-            start = new Date().getTime();
-            makeApiRequest(currentInputValue, start, setServerData);
+            makeApiRequest(currentInputValue, setServerData, stopLoadingAnimation);
             isTimerStarted = false;
         }, 1000);
     }
@@ -47,7 +46,7 @@ const Search = () => {
                 />
                 <button onClick={showAllBooks}>SEARCH</button>
             </div>
-            <Snippets buttonRef={allSnipets} data={serverData} />
+            <Snippets buttonRef={allSnipets} data={serverData} value={value} />
         </div>
     )
 }

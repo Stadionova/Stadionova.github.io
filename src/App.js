@@ -1,5 +1,5 @@
 import './App.scss';
-import Search from './Components/Search/Search';
+import SearchContainer from './Components/Search/SearchContainer';
 import DetailedSnippet from './Components/DetailedSnippet/DetailedSnippet';
 import { Route } from "react-router-dom";
 import React from "react";
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Route path='/works/' component={DetailedSnippet} />
-      <Route path='/' component={Search} />
+      <Route path='/' component={SearchContainer} />
     </div>
   );
 }
