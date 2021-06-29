@@ -14,7 +14,9 @@ const Search = ({ showLoadingAnimation, stopLoadingAnimation, value }) => {
 
     function showAllBooks() {
         allSnipets.current.style.display = 'block';
-        showLoadingAnimation();
+        if (currentInputValue !== undefined) {
+            showLoadingAnimation();
+        }
     }
 
     function setTimerId() {
