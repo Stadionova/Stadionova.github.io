@@ -28,6 +28,36 @@
     }
 }
 
+.snippetsWrapperShow {
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+    .eachSnippet {
+        display: flex;
+        margin: 0 auto;
+        background-color: blanchedalmond;
+        border: 1px solid black;
+        margin-top: 20px;
+        cursor: pointer;
+        img {
+            height: 120px;
+            width: 120px;
+            padding-right: 20px;
+        }
+        h1 {
+            font-size: 15pt;
+            padding-right: 20px;
+            color: black;
+        }
+        p {
+            color: black;
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
 [data="hide"] {
     display: none;
 }

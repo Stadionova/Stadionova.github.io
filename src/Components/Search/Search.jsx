@@ -1,6 +1,6 @@
 import classes from "./Search.module.scss";
 import makeApiRequest from "../../makeApiRequest";
-import Snippets from "../Snippets/Snippets";
+import SnippetsContainer from "../Snippets/SnippetsContainer";
 import React, { useState } from 'react';
 
 const Search = ({ showLoadingAnimation, stopLoadingAnimation, value }) => {
@@ -48,7 +48,7 @@ const Search = ({ showLoadingAnimation, stopLoadingAnimation, value }) => {
                 />
                 <button onClick={showAllBooks}>SEARCH</button>
             </div>
-            <Snippets buttonRef={allSnipets} data={serverData} value={value} />
+            <SnippetsContainer buttonRef={allSnipets} data={serverData} value={value} />
         </div>
     )
 }

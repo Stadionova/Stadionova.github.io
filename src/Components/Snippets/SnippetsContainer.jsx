@@ -1,19 +1,5 @@
 import React from "react";
-import { setOpenedBookIsbn } from "../../store";
-import { connect } from "react-redux";
 import Snippets from "../Snippets/Snippets";
-
-const mapStateToProps = function () {
-    return {}
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setUrlPrefixDispacth: (book) => {
-            dispatch(setOpenedBookIsbn(book));
-        }
-    }
-}
 
 class SnippetsContainer extends React.Component {
     constructor(props) {
@@ -43,4 +29,4 @@ class SnippetsContainer extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SnippetsContainer);
+export default SnippetsContainer;
