@@ -23,7 +23,7 @@ const Snippets = ({ data, buttonRef, value }) => {
     return (
         <div className={data ? classes.snippetsWrapper : classes.snippetsWrapperShow} ref={buttonRef}>
             <div data={flag}></div>
-            {snippetsData.map(book => {
+            {snippetsData && snippetsData.map(book => {
                 const dataKey = book.key.split('/');
                 const id = dataKey[dataKey.length - 1];
                 const isbn = book.isbn ? book.isbn[0] : '';
