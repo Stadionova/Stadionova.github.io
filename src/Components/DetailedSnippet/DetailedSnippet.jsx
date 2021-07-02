@@ -33,7 +33,7 @@ const DetailedSnippet = (props) => {
             </div>
             <NavLink
                 to={{
-                    pathname: '/'
+                    pathname: '/book-founder'
                 }}>
                 <button>✖</button>
             </NavLink>
