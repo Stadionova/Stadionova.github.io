@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/yandexAutoTest/static/css/main.2904e752.chunk.css",
-    "main.js": "/yandexAutoTest/static/js/main.649420a6.chunk.js",
-    "main.js.map": "/yandexAutoTest/static/js/main.649420a6.chunk.js.map",
+    "main.css": "/yandexAutoTest/static/css/main.1925221a.chunk.css",
+    "main.js": "/yandexAutoTest/static/js/main.edbc5248.chunk.js",
+    "main.js.map": "/yandexAutoTest/static/js/main.edbc5248.chunk.js.map",
     "runtime-main.js": "/yandexAutoTest/static/js/runtime-main.d896a2e3.js",
     "runtime-main.js.map": "/yandexAutoTest/static/js/runtime-main.d896a2e3.js.map",
-    "static/js/2.f02b80cd.chunk.js": "/yandexAutoTest/static/js/2.f02b80cd.chunk.js",
-    "static/js/2.f02b80cd.chunk.js.map": "/yandexAutoTest/static/js/2.f02b80cd.chunk.js.map",
+    "static/js/2.e3781cdf.chunk.js": "/yandexAutoTest/static/js/2.e3781cdf.chunk.js",
+    "static/js/2.e3781cdf.chunk.js.map": "/yandexAutoTest/static/js/2.e3781cdf.chunk.js.map",
     "static/js/3.eedded4d.chunk.js": "/yandexAutoTest/static/js/3.eedded4d.chunk.js",
     "static/js/3.eedded4d.chunk.js.map": "/yandexAutoTest/static/js/3.eedded4d.chunk.js.map",
     "index.html": "/yandexAutoTest/index.html",
-    "static/css/main.2904e752.chunk.css.map": "/yandexAutoTest/static/css/main.2904e752.chunk.css.map",
-    "static/js/2.f02b80cd.chunk.js.LICENSE.txt": "/yandexAutoTest/static/js/2.f02b80cd.chunk.js.LICENSE.txt"
+    "static/css/main.1925221a.chunk.css.map": "/yandexAutoTest/static/css/main.1925221a.chunk.css.map",
+    "static/js/2.e3781cdf.chunk.js.LICENSE.txt": "/yandexAutoTest/static/js/2.e3781cdf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d896a2e3.js",
-    "static/js/2.f02b80cd.chunk.js",
-    "static/css/main.2904e752.chunk.css",
-    "static/js/main.649420a6.chunk.js"
+    "static/js/2.e3781cdf.chunk.js",
+    "static/css/main.1925221a.chunk.css",
+    "static/js/main.edbc5248.chunk.js"
   ]
 }
