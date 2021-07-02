@@ -7,6 +7,7 @@ import React from "react";
 function App() {
   return (
     <div className="App">
+      <Redirect from='/' to='/' />
       <Redirect from='/works/' to='/' />
       <Route path='/works/' component={DetailedSnippet} />
       <Route path='/' component={SearchContainer} />
