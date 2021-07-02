@@ -3,15 +3,18 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Snippets = ({ data, buttonRef, value }) => {
+
     let flag;
     if (value && value.isResponseGot && data === undefined) {
         flag = 'show';
     } else {
         flag = 'hide';
     }
+
     function addDefaultSrc(event) {
         event.target.src = 'https://klike.net/uploads/posts/2020-04/1587719791_1.jpg';
     }
+
     return (
         <div className={classes.snippetsWrapper} ref={buttonRef}>
             <div data={flag}></div>

@@ -3,10 +3,24 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const DetailedSnippet = (props) => {
-    const bookDetailedData = props.location;
+    let bookDetailedData;
+
+    if (props.location.isbn) {
+        bookDetailedData = props.location;
+        localStorage.setItem('bookDetailedData', JSON.stringify(bookDetailedData));
+    } else {
+        if (!JSON.parse(localStorage.getItem('bookDetailedData')).isbn) {
+            localStorage.setItem('bookDetailedData', JSON.stringify(bookDetailedData));
+            bookDetailedData = JSON.parse(localStorage.getItem('bookDetailedData'));
+        } else {
+            bookDetailedData = JSON.parse(localStorage.getItem('bookDetailedData'));
+        }
+    }
+
     function addDefaultSrc(event) {
         event.target.src = 'https://klike.net/uploads/posts/2020-04/1587719791_1.jpg';
     }
+
     return (
         <div className={classes.modalWindow}>
             <div className={classes.detailedSnippetWrapper}>
