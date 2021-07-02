@@ -13,7 +13,7 @@ const DetailedSnippet = (props) => {
         bookDetailedData = props.location;
         localStorage.setItem('bookDetailedData', JSON.stringify(bookDetailedData));
     } else {
-        if (!JSON.parse(localStorage.getItem('bookDetailedData')).isbn) {
+        if (!JSON.parse(localStorage.getItem('bookDetailedData'))) {
             localStorage.setItem('bookDetailedData', JSON.stringify(bookDetailedData));
             bookDetailedData = JSON.parse(localStorage.getItem('bookDetailedData'));
         } else {
