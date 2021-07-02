@@ -5,6 +5,10 @@ import { NavLink } from "react-router-dom";
 const DetailedSnippet = (props) => {
     let bookDetailedData;
 
+    function addDefaultSrc(event) {
+        event.target.src = 'https://klike.net/uploads/posts/2020-04/1587719791_1.jpg';
+    }
+
     if (props.location.isbn) {
         bookDetailedData = props.location;
         localStorage.setItem('bookDetailedData', JSON.stringify(bookDetailedData));
@@ -15,10 +19,6 @@ const DetailedSnippet = (props) => {
         } else {
             bookDetailedData = JSON.parse(localStorage.getItem('bookDetailedData'));
         }
-    }
-
-    function addDefaultSrc(event) {
-        event.target.src = 'https://klike.net/uploads/posts/2020-04/1587719791_1.jpg';
     }
 
     return (
