@@ -12,7 +12,7 @@ const Snippets = ({ data, buttonRef, value }) => {
 
     data && localStorage.setItem('data', JSON.stringify(data));
 
-    (value && value.isResponseGot && data === undefined)
+    (value && value.isResponseGot)
         ? flag = 'show'
         : flag = 'hide';
 
