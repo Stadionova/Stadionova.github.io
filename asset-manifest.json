@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/book-founder/static/css/main.1925221a.chunk.css",
+    "main.css": "/book-founder/static/css/main.af763951.chunk.css",
     "main.js": "/book-founder/static/js/main.c293db4e.chunk.js",
     "main.js.map": "/book-founder/static/js/main.c293db4e.chunk.js.map",
     "runtime-main.js": "/book-founder/static/js/runtime-main.24cc9b0b.js",
@@ -10,13 +10,13 @@
     "static/js/3.eedded4d.chunk.js": "/book-founder/static/js/3.eedded4d.chunk.js",
     "static/js/3.eedded4d.chunk.js.map": "/book-founder/static/js/3.eedded4d.chunk.js.map",
     "index.html": "/book-founder/index.html",
-    "static/css/main.1925221a.chunk.css.map": "/book-founder/static/css/main.1925221a.chunk.css.map",
+    "static/css/main.af763951.chunk.css.map": "/book-founder/static/css/main.af763951.chunk.css.map",
     "static/js/2.e3494ec3.chunk.js.LICENSE.txt": "/book-founder/static/js/2.e3494ec3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.24cc9b0b.js",
     "static/js/2.e3494ec3.chunk.js",
-    "static/css/main.1925221a.chunk.css",
+    "static/css/main.af763951.chunk.css",
     "static/js/main.c293db4e.chunk.js"
   ]
 }
