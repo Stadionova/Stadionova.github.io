@@ -5,6 +5,7 @@ export default function getServerData(currentInputValue, setServerData, stopLoad
         if (response.status === 200) {
             setServerData(response.data.docs);
             stopLoadingAnimation();
+            window.location.href = window.location.href + `?${currentInputValue}`;
         }
     });
 }

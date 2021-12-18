@@ -12,10 +12,18 @@ const Search = ({ showLoadingAnimation, stopLoadingAnimation, value }) => {
     const inputValue = React.createRef();
     const allSnipets = React.createRef();
 
+    if (window.location.href.includes('works')) {
+        console.log(333);
+        currentInputValue = window.location.href.split('works/')[1];
+        // makeApiRequest(currentInputValue, setServerData, stopLoadingAnimation);
+    }
+
     function showAllBooks() {
         allSnipets.current.style.display = 'block';
         if (currentInputValue !== undefined) {
             showLoadingAnimation();
+            const currentUrl = window.location.href.split('?');
+            window.location.href = currentUrl[0];
         }
     }
 
@@ -48,7 +56,12 @@ const Search = ({ showLoadingAnimation, stopLoadingAnimation, value }) => {
                 />
                 <button onClick={showAllBooks}>SEARCH</button>
             </div>
-            <SnippetsContainer buttonRef={allSnipets} data={serverData} value={value} />
+            <SnippetsContainer
+                buttonRef={allSnipets}
+                data={serverData}
+                value={value}
+                currentInputValue={currentInputValue}
+            />
         </div>
     )
 }
